@@ -1,0 +1,35 @@
+<!-- Page Content -->
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Becas
+                <small>Subtitulo</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <% if @scholarships.count > 0 %>
+      <% @scholarships.each do |scholarship| %>
+        <!-- Project One -->
+        <div class="row">
+          <div class="col-md-7">
+            <%= link_to image_tag scholarship.cover.url(:cover) %>
+          </div>
+          <div class="col-md-5">
+            <h3><%= scholarship.name %></h3>
+            <p><%= scholarship.short_description %></p>
+            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    <% else %>
+      <!-- false -->
+      <h2>No hay bechas por el momento</h2>
+      <%= image_tag('empty.png') %>
+      <h3>Intenta de nuevo más tarde</h3>
+    <% end %>
+    <!-- /.row -->
+
+<!-- /.container -->

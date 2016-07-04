@@ -1,0 +1,36 @@
+<div class="nested-fields">
+  <div class="row">
+    <%= f.input :name, label:'Nombre',wrapper_html: { class: 'col-md-4' } %>
+    <%= f.input :lastname, label:'Apellido',wrapper_html: { class: 'col-md-4' } %>
+  </div>
+  <div class="row">
+    <%= f.input :document, label:'DNI',wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :birthdate, label:'Fecha de nacimiento',wrapper_html: { class: 'col-md-2' },
+      as: :date_time_picker,
+      input_html:
+        { data:
+          {
+            date_format: "DD-MM-YYYY",
+            date_max_date: Time.current.strftime('%Y-%m-%d'),
+            date_view_mode: 'years',
+            date_default_date: 18.years.ago.strftime('%Y-%m-%d')
+          }
+        }
+
+    %>
+  </div>
+  <div class="row">
+    <%= f.input :phone, label:'Teléfono', placeholder:'Ej: 2614123456', wrapper_html: { class: 'col-md-4' } %>
+    <%= f.input :cellphone, label:'Celular', placeholder:'Ej: 2613987654', wrapper_html: { class: 'col-md-4'} %>
+  </div>
+  <div class="row">
+    <%= f.input :address, label:'Dirección', placeholder:'Ej: San Martin 1234', wrapper_html: { class: 'col-md-4'} %>
+    <%= f.input :city, label:'Ciudad', placeholder:'Ej: Las Heras, Mendoza', wrapper_html: { class: 'col-md-4'} %>
+  </div>
+  <div class="row">
+    <%= f.simple_fields_for :family_situation do |f_situation| %>
+    <%= render 'family_situation_fields', f: f_situation %>
+    <% end %>
+  </div>
+
+</div>

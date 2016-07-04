@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  personal_data_id: 
+  children: 1
+  dependents: 1
+  minors: 1
+  disability: MyString
+
+two:
+  personal_data_id: 
+  children: 1
+  dependents: 1
+  minors: 1
+  disability: MyString

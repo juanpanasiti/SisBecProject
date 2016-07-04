@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_id: 
+  dwelling: MyString
+  rent: 1
+  situation: MyString
+  incomes: 9.99
+  vehicles: 1
+
+two:
+  profile_id: 
+  dwelling: MyString
+  rent: 1
+  situation: MyString
+  incomes: 9.99
+  vehicles: 1

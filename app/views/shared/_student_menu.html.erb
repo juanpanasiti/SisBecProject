@@ -1,0 +1,10 @@
+<li>
+	<%= link_to current_user.profile, :class => 'button white' do %>
+		<span id="span" class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span> <%= current_user.profile.personal_datum.name %>
+	<% end %>
+</li>
+<li>
+	<%= link_to destroy_user_session_path, method: :delete, :class => 'button white' do %>
+		<span id="span" class="fa-stack fa-lg pull-left"><i class="fa fa-sign-out fa-stack-1x "></i></span> Cerrar Sesión
+	<% end %>
+</li>

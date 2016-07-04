@@ -1,0 +1,35 @@
+
+<%= simple_form_for @student do |f| %>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#personal_datum" data-toggle="tab">Datos Personales</a></li>
+    <li><a href="#school_situation" data-toggle="tab">Estado Académico</a></li>
+    <li><a href="#economic_situation" data-toggle="tab">Situación Económica</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <div class="tab-pane fade in active center" id="personal_datum">
+      <h4>Datos Personales</h4>
+      <%= f.simple_fields_for :personal_datum do |data| %>
+        <%= render 'personal_data_fields', f: data %>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="school_situation">
+      <h4>Estado Académico</h4>
+      <%= f.simple_fields_for :school_situation do |s_situation| %>
+        <%= render 'school_situation_fields', f: s_situation %>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="economic_situation">
+      <h4>Situación Económica</h4>
+      <%= f.simple_fields_for :economic_situation do |e_situation| %>
+        <%= render 'economic_situation_fields', f: e_situation %>
+      <% end %>
+    </div>
+
+  </div>
+  <%= f.button :submit, 'Guardar' %>
+<% end %>

@@ -1,0 +1,65 @@
+                              Prefix Verb   URI Pattern                                                  Controller#Action
+                    new_user_session GET    /users/sign_in(.:format)                                     devise/sessions#new
+                        user_session POST   /users/sign_in(.:format)                                     devise/sessions#create
+                destroy_user_session DELETE /users/sign_out(.:format)                                    devise/sessions#destroy
+                       user_password POST   /users/password(.:format)                                    devise/passwords#create
+                   new_user_password GET    /users/password/new(.:format)                                devise/passwords#new
+                  edit_user_password GET    /users/password/edit(.:format)                               devise/passwords#edit
+                                     PATCH  /users/password(.:format)                                    devise/passwords#update
+                                     PUT    /users/password(.:format)                                    devise/passwords#update
+            cancel_user_registration GET    /users/cancel(.:format)                                      devise/registrations#cancel
+                   user_registration POST   /users(.:format)                                             devise/registrations#create
+               new_user_registration GET    /users/sign_up(.:format)                                     devise/registrations#new
+              edit_user_registration GET    /users/edit(.:format)                                        devise/registrations#edit
+                                     PATCH  /users(.:format)                                             devise/registrations#update
+                                     PUT    /users(.:format)                                             devise/registrations#update
+                                     DELETE /users(.:format)                                             devise/registrations#destroy
+               student_profile_index GET    /students/:student_id/profile(.:format)                      profile#index
+                                     POST   /students/:student_id/profile(.:format)                      profile#create
+                 new_student_profile GET    /students/:student_id/profile/new(.:format)                  profile#new
+                edit_student_profile GET    /students/:student_id/profile/:id/edit(.:format)             profile#edit
+                     student_profile GET    /students/:student_id/profile/:id(.:format)                  profile#show
+                                     PATCH  /students/:student_id/profile/:id(.:format)                  profile#update
+                                     PUT    /students/:student_id/profile/:id(.:format)                  profile#update
+                                     DELETE /students/:student_id/profile/:id(.:format)                  profile#destroy
+              student_relative_index GET    /students/:student_id/relative(.:format)                     relative#index
+                                     POST   /students/:student_id/relative(.:format)                     relative#create
+                new_student_relative GET    /students/:student_id/relative/new(.:format)                 relative#new
+               edit_student_relative GET    /students/:student_id/relative/:id/edit(.:format)            relative#edit
+                    student_relative GET    /students/:student_id/relative/:id(.:format)                 relative#show
+                                     PATCH  /students/:student_id/relative/:id(.:format)                 relative#update
+                                     PUT    /students/:student_id/relative/:id(.:format)                 relative#update
+                                     DELETE /students/:student_id/relative/:id(.:format)                 relative#destroy
+   student_scholarship_request_index GET    /students/:student_id/scholarship_request(.:format)          scholarship_request#index
+                                     POST   /students/:student_id/scholarship_request(.:format)          scholarship_request#create
+     new_student_scholarship_request GET    /students/:student_id/scholarship_request/new(.:format)      scholarship_request#new
+    edit_student_scholarship_request GET    /students/:student_id/scholarship_request/:id/edit(.:format) scholarship_request#edit
+         student_scholarship_request GET    /students/:student_id/scholarship_request/:id(.:format)      scholarship_request#show
+                                     PATCH  /students/:student_id/scholarship_request/:id(.:format)      scholarship_request#update
+                                     PUT    /students/:student_id/scholarship_request/:id(.:format)      scholarship_request#update
+                                     DELETE /students/:student_id/scholarship_request/:id(.:format)      scholarship_request#destroy
+         student_document_file_index GET    /students/:student_id/document_file(.:format)                document_file#index
+                                     POST   /students/:student_id/document_file(.:format)                document_file#create
+           new_student_document_file GET    /students/:student_id/document_file/new(.:format)            document_file#new
+          edit_student_document_file GET    /students/:student_id/document_file/:id/edit(.:format)       document_file#edit
+               student_document_file GET    /students/:student_id/document_file/:id(.:format)            document_file#show
+                                     PATCH  /students/:student_id/document_file/:id(.:format)            document_file#update
+                                     PUT    /students/:student_id/document_file/:id(.:format)            document_file#update
+                                     DELETE /students/:student_id/document_file/:id(.:format)            document_file#destroy
+                            students POST   /students(.:format)                                          students#create
+                         new_student GET    /students/new(.:format)                                      students#new
+                        edit_student GET    /students/:id/edit(.:format)                                 students#edit
+                             student GET    /students/:id(.:format)                                      students#show
+                                     PATCH  /students/:id(.:format)                                      students#update
+                                     PUT    /students/:id(.:format)                                      students#update
+                         managements GET    /managements(.:format)                                       managements#index
+    managements_kind_of_scholarships GET    /managements/kind_of_scholarships(.:format)                  managements/kind_of_scholarships#index
+                                     POST   /managements/kind_of_scholarships(.:format)                  managements/kind_of_scholarships#create
+ new_managements_kind_of_scholarship GET    /managements/kind_of_scholarships/new(.:format)              managements/kind_of_scholarships#new
+edit_managements_kind_of_scholarship GET    /managements/kind_of_scholarships/:id/edit(.:format)         managements/kind_of_scholarships#edit
+     managements_kind_of_scholarship GET    /managements/kind_of_scholarships/:id(.:format)              managements/kind_of_scholarships#show
+                                     PATCH  /managements/kind_of_scholarships/:id(.:format)              managements/kind_of_scholarships#update
+                                     PUT    /managements/kind_of_scholarships/:id(.:format)              managements/kind_of_scholarships#update
+                                     DELETE /managements/kind_of_scholarships/:id(.:format)              managements/kind_of_scholarships#destroy
+                                root GET    /                                                            home#index
+                               about GET    /about(.:format)                                             home#about

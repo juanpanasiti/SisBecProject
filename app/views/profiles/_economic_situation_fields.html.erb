@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="row">
+    <%= f.input :dwelling, label:'Vivienda',wrapper_html: { class: 'col-md-4' } %>
+    <%= f.input :rent, label:'Alquiler',input_html: {min: 0} ,wrapper_html: { class: 'col-md-3' } %>
+  </div>
+  <div class="row">
+    <%= f.input :situation, label:'Situación actual',wrapper_html: { class: 'col-md-4' } %>
+    <%= f.input :incomes, label:'Ingresos', as: :numeric,input_html: {min: 0},wrapper_html: { class: 'col-md-3' } %>
+  </div>
+  <div class="row">
+    <%= f.input :vehicles, label:'Vehículos',wrapper_html: { class: 'col-md-2' } %>
+  </div>
+
+</div>

@@ -1,0 +1,65 @@
+
+<%= form_for([:managements, @kind_of_scholarship],html: {id: "sch_types_form"}) do |f| %>
+  <% if @kind_of_scholarship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kind_of_scholarship.errors.count, "error") %> prohibited this kind_of_scholarship from being saved:</h2>
+
+      <ul>
+      <% @kind_of_scholarship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="row col-md-6">
+      <div class="form-group col-md-12">
+        <%= f.label :name, 'Título' %><br>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Título sin el 'Beca de...' " %>
+      </div>
+      <div class="form-group date_time_picker optional col-md-6">
+        <label class="date_time_picker optional control-label" for="event_when">Inicio de inscripcion</label>
+        <div class="input-group date datetime_picker">
+          <input class="string date_time_picker optional form-control" type="text" data-date-format="DD-MM-YYYY" data-date-extra-formats="[&quot;YYYY-MM-DD HH:mm:ss ZZ&quot;]" name="kind_of_scholarship[starting_date]" id="kind_of_scholarship_starting_date">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </div>
+      </div>
+      <div class="form-group date_time_picker optional col-md-6">
+        <label class="date_time_picker optional control-label" for="event_when">Fin de inscripcion</label>
+        <div class="input-group date datetime_picker">
+          <input class="string date_time_picker optional form-control" type="text" data-date-format="DD-MM-YYYY" data-date-extra-formats="[&quot;YYYY-MM-DD HH:mm:ss ZZ&quot;]" name="kind_of_scholarship[ending_date]" id="kind_of_scholarship_ending_date">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row col-md-6">
+      <div class="form-group">
+        <%= f.label :short_description, 'Descripción breve' %><br>
+        <%= f.text_area :short_description, class: 'form-control', :rows => 5 %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, 'Descripción' %><br>
+    <%= f.text_area :description, :class => "tinymce form-control", :rows => 15 %>
+    <%= tinymce  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, 'Estado' %><br>
+    <%= f.text_field :state, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cover %>
+    <%= f.file_field :cover, class: 'form-control'%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit @s_btn, class:'btn btn-info' %>
+  </div>
+
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kind_of_scholarship.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kind_of_scholarship.description %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @kind_of_scholarship.short_description %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @kind_of_scholarship.state %>
+</p>
+
+<p>
+  <strong>Starting date:</strong>
+  <%= @kind_of_scholarship.starting_date %>
+</p>
+
+<p>
+  <strong>Ending date:</strong>
+  <%= @kind_of_scholarship.ending_date %>
+</p>
+
+<%= link_to 'Edit', edit_managements_kind_of_scholarship_path(@kind_of_scholarship) %> |
+<%= link_to 'Back', managements_path %>

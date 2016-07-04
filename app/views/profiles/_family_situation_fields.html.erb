@@ -1,0 +1,20 @@
+<div class="nested-fields">
+  <h4>Situación familiar</h4>
+
+    <%= f.input :children, label:'Hijos',input_html: {min: 0, value:0}, wrapper_html: { class: 'col-md-1'} %>
+    <%= f.input :dependents, label:'Personas a cargo',input_html: {min: 0}, wrapper_html: { class: 'col-md-2'} %>
+    <%= f.input :minors, label:'Menores de edad',input_html: {min: 0}, wrapper_html: { class: 'col-md-2'} %>
+    <%= f.input :disability, label:'Discapacidad', wrapper_html: { class: 'col-md-12'} %>
+
+    <div class="col-md-12">
+      <h3>Grupo Familiar</h3>
+      <div id="relatives">
+        <%= f.simple_fields_for :relatives do |relative| %>
+          <%= render 'relative_fields', f: relative %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association 'Agregar miembro', f, :relatives %>
+        </div>
+      </div>
+    </div>
+</div>

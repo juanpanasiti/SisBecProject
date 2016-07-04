@@ -1,0 +1,1 @@
+<%= collection_select(:filter, "Becas", Scholarship.find(:all, :id, :tipoBeca, :include_blank => true, :selected => params[:filter])

@@ -1,0 +1,45 @@
+<%= simple_form_for [:managements, @kind_of_scholarship] do |f| %>
+  <div class="row">
+    <div class="row col-md-6">
+      <div class="form-group col-md-12">
+        <%= f.input :name, label:'Título' %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.input :starting_date, label:'Inicio', as: :date_time_picker, input_html:
+        { data:
+          {
+            date_format: "DD-MM-YYYY",
+            date_view_mode: 'months',
+          }
+          } %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.input :ending_date, label:'Fin', as: :date_time_picker, input_html:
+        { data:
+          {
+            date_format: "DD-MM-YYYY",
+            date_view_mode: 'months',
+          }
+          } %>
+      </div>
+
+    </div>
+    <div class="row col-md-6">
+      <%= f.input :short_description, label:'Breve descripción', input_html: { rows: 5, placeholder: 'Breve descripción de la beca' } %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.input :description, label:'Descripción',input_html: {:rows => 15, class: 'tinymce' } %>
+    <%= tinymce  %>
+  </div>
+  <div class="row">
+    <%= f.input :state,
+    collection: ['Habilitada','Deshabilitada'],
+    label:'Estado',wrapper_html: { class: 'col-md-4' } %>
+    <%= f.input :cover, label:'Imagen',wrapper_html: { class: '' } %>
+  </div>
+  <%= f.button :submit, 'Guardar' %>
+<% end %>

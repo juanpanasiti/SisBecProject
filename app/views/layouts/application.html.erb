@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SisBecProyect - CETEM</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <%= link_to 'SisBecProject - CETEM', root_path, class:'navbar-brand' %>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <% if user_signed_in? %>
+            				<% if current_user.is_admin? %>
+            					<%= render 'shared/manager_menu' %>
+            				<% elsif current_user.is_student? %>
+            					<%= render 'shared/student_menu' %>
+            				<% else %>
+            					<%= render 'shared/non_student_menu' %>
+            				<% end %>
+            			<% else %>
+            				<%= render 'shared/common_menu' %>
+            			<% end %>
+                    <li>
+                        <%= link_to 'Acerca de..', about_path %>
+                    </li>
+
+                  </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- /.navigation -->
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <div class="body-page">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

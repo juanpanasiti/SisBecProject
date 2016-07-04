@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <%= f.input :name, label:'Nombre', wrapper_html: { class: 'col-md-4'} %>
+  <%= f.input :lastname, label:'Apellido', wrapper_html: { class: 'col-md-3'} %>
+  <%= f.input :document, label:'DNI', wrapper_html: { class: 'col-md-2'} %>
+  <%= f.input :relationship, label:'Relación',collection:['Padre/Madre'], wrapper_html: { class: 'col-md-3'} %>
+  <%= link_to_remove_association "Borrar", f, class:'btn btn-outline btn-danger' %>
+</div>

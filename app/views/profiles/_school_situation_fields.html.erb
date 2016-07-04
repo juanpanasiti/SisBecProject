@@ -1,0 +1,15 @@
+<div class="nested-fields">
+  <div class="row">
+    <%= f.input :career, label:'Carrera',
+                  collection: ['Ing. en Sistemas','Ing. Electrónica','Ing. Electromecánica','Ing. Civil','Ing. Química'],
+                  wrapper_html: { class: 'col-md-3' }%>
+
+    <div class="col-md-6">
+      <h4>Semana de cursado</h4>
+      <%= f.simple_fields_for :school_week do |s_week| %>
+      <%= render 'school_week_fields', f: s_week %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
