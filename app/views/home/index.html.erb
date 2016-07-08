@@ -1,35 +1,41 @@
 <!-- Page Content -->
 
-    <!-- Page Heading -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Becas
-                <small>Subtitulo</small>
-            </h1>
-        </div>
+<!-- Page Heading -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="">
+      <h1 class="page-header">Becas
+        <small>Subtitulo</small>
+      </h1>
     </div>
-    <!-- /.row -->
-    <% if @scholarships.count > 0 %>
-      <% @scholarships.each do |scholarship| %>
-        <!-- Project One -->
-        <div class="row">
-          <div class="col-md-7">
-            <%= link_to image_tag scholarship.cover.url(:cover) %>
-          </div>
-          <div class="col-md-5">
-            <h3><%= scholarship.name %></h3>
-            <p><%= scholarship.short_description %></p>
-            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-          </div>
-        </div>
-        <hr>
-      <% end %>
-    <% else %>
-      <!-- false -->
-      <h2>No hay bechas por el momento</h2>
-      <%= image_tag('empty.png') %>
-      <h3>Intenta de nuevo más tarde</h3>
-    <% end %>
-    <!-- /.row -->
+  </div>
+</div>
+<!-- /.row -->
+<% if @scholarships.count > 0 %>
+  <% @scholarships.each do |scholarship| %>
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-offset-1 col-md-12">
+        <h2><%= scholarship.name.capitalize %> <small>/ <%= "Inscripción desde el #{custom_datetime(scholarship.starting_date)} hasta el #{custom_datetime(scholarship.ending_date)}" %></small></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12 col-md-7 col-lg-5">
+        <%= image_tag scholarship.cover.url(:cover), class:'img-responsive' %>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+        <p><%= scholarship.short_description %></p>
+        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+<% else %>
+  <!-- false -->
+  <h2>No hay bechas por el momento</h2>
+  <%= image_tag('empty.png') %>
+  <h3>Intenta de nuevo más tarde</h3>
+<% end %>
+<!-- /.row -->
 
 <!-- /.container -->
